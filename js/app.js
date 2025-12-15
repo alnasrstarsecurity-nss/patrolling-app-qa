@@ -87,17 +87,16 @@ async function submitVisit() {
 
     const result = await response.json();
 
-    if (result.status === "success") {
-      statusEl.style.color = "green";
-      statusEl.innerText = "✅ Submitted successfully";
-      setTimeout(() => {
-             statusEl.innerText = "";
-             }, 2000);
-      resetForm();
-    } else {
-      statusEl.style.color = "red";
-      statusEl.innerText = "❌ Submission failed";
-    }
+   if (result.status === "success") {
+  statusEl.style.color = "green";
+  statusEl.innerText = "✅ Submitted successfully";
+  resetForm();
+  setTimeout(() => statusEl.innerText = "", 2000);
+} else {
+  statusEl.style.color = "red";
+  statusEl.innerText = "❌ " + (result.message || "Submission failed");
+}
+
 
   } catch (err) {
     console.error("Submit error:", err);
