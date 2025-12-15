@@ -84,6 +84,9 @@ async function submitVisit() {
     if (result.status === "success") {
       statusEl.style.color = "green";
       statusEl.innerText = "✅ Submitted successfully";
+      setTimeout(() => {
+             statusEl.innerText = "";
+             }, 2000);
       resetForm();
     } else {
       statusEl.style.color = "red";
