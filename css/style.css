@@ -80,6 +80,7 @@ canvas {
   border: 2px dashed #c7c7c7;
   border-radius: 8px;
   margin-top: 10px;
+  touch-action: none;
 }
 
 /* Buttons */
