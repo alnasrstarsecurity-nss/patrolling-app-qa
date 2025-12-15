@@ -109,3 +109,10 @@ function resetForm() {
   clearSign();
 }
 
+function clearStatus() {
+  document.getElementById("status").innerText = "";
+}
+
+document.getElementById("locationSelect").addEventListener("change", clearStatus);
+document.getElementById("remarks").addEventListener("input", clearStatus);
+document.getElementById("photos").addEventListener("change", clearStatus);
