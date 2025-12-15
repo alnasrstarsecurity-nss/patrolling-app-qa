@@ -43,7 +43,6 @@ async function submitVisit() {
   statusEl.innerText = "Submitting...";
 
   try {
-    /* VALIDATION */
     if (!locationEl.value) {
       alert("Please select location");
       statusEl.innerText = "";
@@ -56,18 +55,16 @@ async function submitVisit() {
       return;
     }
 
-    /* PHOTOS */
     const photos64 = [];
     for (let f of photos.files) {
       photos64.push(await toBase64(f));
     }
 
-    /* PAYLOAD */
     const payload = {
       action: "submit",
       username: localStorage.getItem("user"),
       password: localStorage.getItem("pass"),
-      location: locationEl.value,   // ✅ FIXED
+      location: locationEl.value,
       checklist: [...document.querySelectorAll(".chk:checked")].map(c => c.value),
       remarks: remarks.value,
       lat: lat || "",
@@ -79,8 +76,7 @@ async function submitVisit() {
 
     const response = await fetch(SCRIPT_URL, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload)
+      body: JSON.stringify(payload)   // ✅ NO HEADERS
     });
 
     const result = await response.json();
@@ -95,7 +91,7 @@ async function submitVisit() {
     }
 
   } catch (err) {
-    console.error(err);
+    console.error("Submit error:", err);
     statusEl.style.color = "red";
     statusEl.innerText = "❌ Network error";
   }
