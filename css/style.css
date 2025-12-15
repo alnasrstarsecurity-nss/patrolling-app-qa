@@ -116,6 +116,7 @@ button.secondary {
   .logo {
             display: flex; 
             justify-content: center;
+            text-align: center;
             width: 120px;
             margin-bottom: 15px;
   }
