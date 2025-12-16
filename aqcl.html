@@ -20,40 +20,186 @@
 
 <div class="section">
 <label>Accommodation Name</label>
-<input type="text" id="accName" required>
+<input id="accName" required>
 </div>
 
 <div class="section">
 <label>Guard in Position</label>
 <div class="yesno">
-  <label><input type="radio" name="guardPosition" value="YES"> YES</label>
-  <label><input type="radio" name="guardPosition" value="NO"> NO</label>
+<label><input type="radio" name="guardPosition" value="YES">YES</label>
+<label><input type="radio" name="guardPosition" value="NO">NO</label>
 </div>
 </div>
 
 <div class="section">
-<h3>Guard 1 – Quality Check</h3>
-
-<div class="cag-line">
-<strong>Communication</strong>
-<label><input type="radio" name="g1_comm" value="A">A</label>
-<label><input type="radio" name="g1_comm" value="B">B</label>
-<label><input type="radio" name="g1_comm" value="C">C</label>
+<label>Number of Guards</label>
+<input type="number" id="numGuards">
 </div>
 
-<div class="cag-line">
-<strong>Awareness</strong>
-<label><input type="radio" name="g1_aware" value="A">A</label>
-<label><input type="radio" name="g1_aware" value="B">B</label>
-<label><input type="radio" name="g1_aware" value="C">C</label>
+<div class="section">
+<label>Appearance of Guard on Duty</label>
+<textarea id="guardAppearance"></textarea>
 </div>
 
-<div class="cag-line">
-<strong>Grooming</strong>
-<label><input type="radio" name="g1_groom" value="A">A</label>
-<label><input type="radio" name="g1_groom" value="B">B</label>
-<label><input type="radio" name="g1_groom" value="C">C</label>
+<div class="section">
+<label>Appearance of Guard Desk / Work</label>
+<textarea id="deskAppearance"></textarea>
 </div>
+
+<div class="section">
+<label>Guard Contact Number</label>
+<input id="guardContact">
+</div>
+
+<div class="section">
+<label>Walk Patrol with Guard</label>
+<div class="yesno">
+<label><input type="radio" name="walkPatrol" value="YES">YES</label>
+<label><input type="radio" name="walkPatrol" value="NO">NO</label>
+</div>
+</div>
+
+<div class="section">
+<label>Patrol Effective</label>
+<div class="yesno">
+<label><input type="radio" name="patrolEffective" value="YES">YES</label>
+<label><input type="radio" name="patrolEffective" value="NO">NO</label>
+</div>
+</div>
+
+<div class="section">
+<label>Changes Have Made</label>
+<textarea id="changesMade"></textarea>
+</div>
+
+<div class="section">
+<label>QR ID Card Check</label>
+<div class="yesno">
+<label><input type="radio" name="qrCheck" value="YES">YES</label>
+<label><input type="radio" name="qrCheck" value="NO">NO</label>
+</div>
+</div>
+
+<div class="section">
+<label>Supervisor Last Visit</label>
+<input type="date" id="supervisorLastVisit">
+</div>
+
+<div class="section">
+<label>Supervisor Name</label>
+<input id="supervisorName">
+</div>
+
+<div class="section">
+<label>Supervisors Visited (Last 7 Days)</label>
+<input type="number" id="supervisors7Days">
+</div>
+
+<div class="section">
+<label>Key Cabinet Locked</label>
+<div class="yesno">
+<label><input type="radio" name="keyCabinet" value="YES">YES</label>
+<label><input type="radio" name="keyCabinet" value="NO">NO</label>
+</div>
+</div>
+
+<div class="section">
+<label>Key Log</label>
+<div class="yesno">
+<label><input type="radio" name="keyLog" value="YES">YES</label>
+<label><input type="radio" name="keyLog" value="NO">NO</label>
+</div>
+</div>
+
+<div class="section">
+<label>List Keys Audited</label>
+<textarea id="keysAudited"></textarea>
+</div>
+
+<div class="section">
+<label>Cameras Working</label>
+<div class="yesno">
+<label><input type="radio" name="camerasWorking" value="YES">YES</label>
+<label><input type="radio" name="camerasWorking" value="NO">NO</label>
+</div>
+</div>
+
+<div class="section">
+<label>Number of Cameras</label>
+<input type="number" id="numCameras">
+</div>
+
+<div class="section">
+<label>ACS Functional</label>
+<input id="acsFunctional">
+</div>
+
+<div class="section">
+<label>Perimeter Secure</label>
+<input id="perimeterSecure">
+</div>
+
+<div class="section">
+<label>Apartment Inspection</label>
+<input id="apartmentInspection">
+</div>
+
+<div class="section">
+<label>Apartment Remark</label>
+<textarea id="apartmentRemark"></textarea>
+</div>
+
+<div class="section">
+<label>Actions Taken</label>
+<textarea id="actionsTaken"></textarea>
+</div>
+
+<div class="section">
+<h3>Guard 1 CAG</h3>
+<div class="cag">
+<label><input type="radio" name="g1" value="A">A</label>
+<label><input type="radio" name="g1" value="B">B</label>
+<label><input type="radio" name="g1" value="C">C</label>
+</div>
+</div>
+
+<div class="section">
+<h3>Guard 2 CAG</h3>
+<div class="cag">
+<label><input type="radio" name="g2" value="A">A</label>
+<label><input type="radio" name="g2" value="B">B</label>
+<label><input type="radio" name="g2" value="C">C</label>
+</div>
+</div>
+
+<div class="section">
+<label>Patrolling Supervisor</label>
+<input id="patrollingSupervisor">
+</div>
+
+<div class="section">
+<label>Serial Number</label>
+<input id="serialNumber">
+</div>
+
+<div class="section">
+<label>Building Security Name</label>
+<input id="buildingSecurityName">
+</div>
+
+<div class="section">
+<label>Security Staff Number</label>
+<input type="number" id="securityStaffNumber">
+</div>
+
+<div class="section">
+<label>Building Landline Number</label>
+<input type="number" id="buildingLandline">
+</div>
+
+<div class="section">
+<label>Security Duty Mobile Number</label>
+<input type="number" id="securityDutyMobile">
 </div>
 
 <div class="section">
