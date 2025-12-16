@@ -10,52 +10,127 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/auth.js"></script>
+  <script src="js/aqcl.js" defer></script>
 </head>
-<body>
+<body onload="requireLogin()">
 
   <div class="form-container">
     <h2>Accomodation Quality Check List</h2>
+    <form id="aqclForm">
 
-    <!-- Location -->
-    <select id="locationSelect" required>
-  <option value="">Select Location</option>
-  <option value="L1">L1</option>
-  <option value="L2">L2</option>
-  <option value="L3">L3</option>
-   </select>
+    <label>Accommodation Name</label>
+<input type="text" id="accName" required>
 
-    <!-- Checklist -->
-    <label>Checklist</label>
-    <div class="checklist">
-      <label>
-        <input type="checkbox" class="chk" value="Clean">
-        Clean
-      </label>
-      <label>
-        <input type="checkbox" class="chk" value="Secure">
-        Secure
-      </label>
-    </div>
+<label>Serial Number</label>
+<input type="text" id="serial">
 
-    <!-- Remarks -->
-    <label>Remarks</label>
-    <textarea id="remarks" placeholder="Enter remarks"></textarea>
+<label>Building Security Name</label>
+<input type="text" id="buildingSecurity">
 
-    <!-- Photos -->
-    <label>Upload Photos</label>
-    <input type="file" id="photos" accept="image/*" capture="environment" multiple>
+<!-- GUARD -->
+<label>Guard in Position</label>
+<input type="checkbox" id="guardPosition">
 
-    <!-- Signature -->
-    <label>Signature</label>
-    <canvas id="sign" width="300" height="150"></canvas>
+<label>Number of Guards</label>
+<input type="number" id="numGuards">
 
-    <button type="button" class="secondary" onclick="clearSign()">Clear Signature</button>
+<label>Appearance of Guard</label>
+<textarea id="guardAppearance"></textarea>
 
-    <!-- Submit -->
-    <button onclick="submitVisit()">Submit Visit</button>
-    <p id="status" style="color:green;font-weight:bold;"></p>
+<label>Desk Appearance</label>
+<textarea id="deskAppearance"></textarea>
 
-    <button class="logout-btn" onclick="logout()">Logout</button>
+<label>Guard Contact Number</label>
+<input type="tel" id="guardContact">
+
+<label>Security Staff Number</label>
+<input type="number" id="securityStaffNumber">
+
+<!-- PATROL -->
+<label>Walk Patrol with Guard</label>
+<input type="checkbox" id="walkPatrol">
+
+<label>Patrol Effective</label>
+<input type="checkbox" id="patrolEffective">
+
+<label>Changes Made</label>
+<textarea id="changesMade"></textarea>
+
+<!-- SUPERVISION -->
+<label>QR ID Card Check</label>
+<input type="checkbox" id="qrCheck">
+
+<label>Supervisor Last Visit</label>
+<input type="date" id="lastVisit">
+
+<label>Supervisor Name</label>
+<input type="text" id="supervisorName">
+
+<label>Supervisors Visited (Last 7 Days)</label>
+<input type="number" id="supervisors7">
+
+<label>Patrolling Supervisor</label>
+<input type="text" id="patrollingSupervisor">
+
+<!-- KEYS -->
+<label>Key Cabinet Locked</label>
+<input type="checkbox" id="keyCabinet">
+
+<label>Key Log</label>
+<input type="checkbox" id="keyLog">
+
+<label>List Keys Audited</label>
+<textarea id="keysAudited"></textarea>
+
+<!-- CCTV -->
+<label>Cameras Working</label>
+<input type="checkbox" id="camerasWorking">
+
+<label>Number of Cameras</label>
+<input type="number" id="numCameras">
+
+<label>ACS Functional</label>
+<input type="text" id="acs">
+
+<label>Perimeter Secure</label>
+<input type="text" id="perimeter">
+
+<!-- APARTMENT -->
+<label>Apartment Inspection</label>
+<input type="text" id="apartmentInspection">
+
+<label>Apartment Remark</label>
+<textarea id="apartmentRemark"></textarea>
+
+<!-- ACTION -->
+<label>Actions Taken</label>
+<textarea id="actionsTaken"></textarea>
+
+<!-- CAG -->
+<label>Guard 1 CAG</label>
+<textarea id="guard1cag"></textarea>
+
+<label>Guard 2 CAG</label>
+<textarea id="guard2cag"></textarea>
+
+<!-- CONTACT -->
+<label>Building Landline Number</label>
+<input type="number" id="landline">
+
+<label>Security Duty Mobile Number</label>
+<input type="number" id="dutyMobile">
+
+<!-- SIGNATURE -->
+<label>Signature</label>
+<canvas id="sign" height="160"></canvas>
+<button type="button" onclick="clearSign()">Clear Signature</button>
+
+<br><br>
+
+<button type="submit">Submit AQCL</button>
+
+<p id="status"></p>
     
   </div>
   
