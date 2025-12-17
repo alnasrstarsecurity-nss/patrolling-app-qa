@@ -2,33 +2,47 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  
   <title>Patrol Login</title>
 
-  <!-- Modern font (optional but recommended) -->
+  <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
-  <!-- Your CSS -->
+  <!-- CSS -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <div class="form-container">
-    <img src="Logo.png" alt="Company Logo" class="logo">
-    <h2 style="text-align: center;">Supervisor Login</h2>
+<div class="form-container">
+  <img src="Logo.png" alt="Company Logo" class="logo">
 
-    <input id="user" type="text" placeholder="Username">
-    <input id="pass" type="password" placeholder="Password">
+  <h2 style="text-align:center;">Supervisor Login</h2>
 
-    <button onclick="login()">Login</button>
+  <input id="user" type="text" placeholder="Username" autocomplete="username">
+  <input id="pass" type="password" placeholder="Password" autocomplete="current-password">
 
-    <p id="msg" class="message"></p>
-  </div>
+  <button id="loginBtn">Login</button>
+
+  <p id="msg" class="message"></p>
+</div>
 
 <script>
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwDzSXgZER1DM-KJZl1YQTR6JbeD2Yk7s0DsQO5t7Kfx1Oo68hV0zDMvZOISKcBgv28rA/exec";
 
+const msg = document.getElementById("msg");
+const loginBtn = document.getElementById("loginBtn");
+
+loginBtn.addEventListener("click", login);
+
 function login() {
+  const username = user.value.trim();
+  const password = pass.value;
+
+  if (!username || !password) {
+    msg.innerText = "⚠️ Enter username and password";
+    msg.className = "message error";
+    return;
+  }
+
   msg.innerText = "Checking...";
   msg.className = "message";
 
@@ -36,24 +50,26 @@ function login() {
     method: "POST",
     body: JSON.stringify({
       action: "login",
-      username: user.value,
-      password: pass.value
+      username: username,
+      password: password   // plain password → hashed in Apps Script
     })
   })
   .then(r => r.json())
   .then(res => {
     if (res.status === "success") {
-      localStorage.setItem("user", user.value);
-      localStorage.setItem("pass", pass.value);
+      // Store session token only (NOT password)
+      localStorage.setItem("session", res.session);
+      localStorage.setItem("user", username);
+
       location.href = "menu.html";
     } else {
       msg.innerText = "❌ Wrong username or password";
-      msg.classList.add("error");
+      msg.className = "message error";
     }
   })
   .catch(() => {
-    msg.innerText = "⚠️ server error";
-    msg.classList.add("error");
+    msg.innerText = "⚠️ Server error";
+    msg.className = "message error";
   });
 }
 </script>
