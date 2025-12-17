@@ -33,10 +33,10 @@ if (localStorage.getItem("LOGGED_IN") !== "YES") {
 
     <button onclick="logout()">Logout</button>
 
+
 <script>
 function logout() {
-  localStorage.removeItem("LOGGED_IN");
-  localStorage.removeItem("USERNAME");
+  localStorage.clear();
   window.location.replace("index.html");
 }
 </script>
