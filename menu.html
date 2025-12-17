@@ -1,11 +1,13 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
   <script>
-if (localStorage.getItem("loggedIn") !== "YES") {
+if (sessionStorage.getItem("loggedIn") !== "YES") {
   location.href = "index.html";
 }
 </script>
+  
 <head>
   <meta charset="UTF-8">
   <title>Select Form</title>
