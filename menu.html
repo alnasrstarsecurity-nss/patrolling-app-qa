@@ -30,7 +30,15 @@ if (sessionStorage.getItem("loggedIn") !== "YES") {
     <button onclick="location.href='incident.html'">Incident Report</button>
     <button onclick="location.href='far.html'">Fire Alarm Report</button>
 
-  <br><button onclick="logout()">Logout</button>
+  <button onclick="logout()">Logout</button>
+
+<script>
+function logout() {
+  sessionStorage.clear();
+  location.href = "index.html";
+}
+</script>
+
 
     
   </div>
