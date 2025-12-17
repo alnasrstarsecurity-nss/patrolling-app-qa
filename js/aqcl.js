@@ -1,11 +1,9 @@
 /* ===============================
    🔐 PAGE PROTECTION
 ================================ */
-/*if (localStorage.getItem("loggedIn") !== "YES") {
-  alert("Please login first");
-  location.href = "index.html";
-}*/
-
+if (localStorage.getItem("LOGGED_IN") !== "YES") {
+  window.location.replace("index.html");
+}
 /* ===============================
    CONFIG
 ================================ */
