@@ -2,11 +2,7 @@
 <html lang="en">
   
 <head>
- <script>
-if (localStorage.getItem("LOGGED_IN") !== "YES") {
-  window.location.replace("index.html");
-}
-</script>
+
 
   <meta charset="UTF-8">
   <title>Accommodation Quality Check List</title>
@@ -21,6 +17,16 @@ if (localStorage.getItem("LOGGED_IN") !== "YES") {
 </head>
 
 <body>
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const loginState = localStorage.getItem("LOGGED_IN");
+  console.log("MENU LOGIN STATE =", loginState);
+
+  if ((loginState || "").toUpperCase() !== "YES") {
+    window.location.replace("index.html");
+  }
+});
+</script>
 
 <div class="form-container">
 
