@@ -56,11 +56,11 @@ function login() {
   })
   .then(r => r.json())
   .then(res => {
-  if (res.status === "success") {
-  sessionStorage.setItem("loggedIn", "YES");
-  sessionStorage.setItem("username", user.value);
-  location.href = "menu.html";
-  }
+   if (res.status === "success") {
+  localStorage.setItem("LOGGED_IN", "YES");
+  localStorage.setItem("USERNAME", user.value);
+  window.location.replace("menu.html");
+}
   
   else {
       msg.innerText = "❌ Wrong username or password";
