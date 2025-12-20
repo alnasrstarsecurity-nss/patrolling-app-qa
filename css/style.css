@@ -6,7 +6,7 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background: linear-gradient(135deg, #ffe6e6, #fce1e1);
+  background: linear-gradient(135deg, #ffe6e6, #9e5757);
   display: flex;
   justify-content: center;
   align-items: flex-start;   /* 👈 IMPORTANT */
@@ -237,6 +237,7 @@ canvas {
   left: 2px;
   font-size: 18px;
   color: #1976d2;
+  background: white;
 }
 @media (max-width: 768px) {
   .form-container {
