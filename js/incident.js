@@ -148,9 +148,9 @@ form.addEventListener("submit", e => {
 
   /* ---- PAYLOAD (MATCHES APPS SCRIPT 100%) ---- */
   const payload = {
-    action: "submitAQCL",
+    action: "submitINCIDENT",
 
-    accName: accName.value,
+    Name: Name.value,
     guardPosition: radio("guardPosition"),
     numGuards: numGuards.value,
     guardAppearance: guardAppearance.value,
