@@ -94,11 +94,11 @@ document.addEventListener("DOMContentLoaded", () => {
        </div>
 
   <label>Number of guards</label>
-  <input type="number" id="numGuards">
+  <input type="number" id="numGuards" required>
 
 
   <label>Appearance of guard on duty (comment)</label>
-  <textarea id="guardAppearance"></textarea>
+  <textarea id="guardAppearance" required></textarea>
 
 
   <label>Appearance of guard desk / work area (comment)</label>
@@ -107,14 +107,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   <label>Does the guard have all relevant contact numbers?</label>
-  <input id="guardContact">
+  <input id="guardContact" required>
 </div>
 
 <div class="section">
   <h3>Review Guards Patrol</h3>
    
   <div class="yesno">
-     <label>Did you Walk Patrol with Guard?</label><label class="radio-box">YES <input type="radio" name="walkPatrol" value="YES"></label>
+     <label>Did you Walk Patrol with Guard?</label><label class="radio-box">YES <input type="radio" name="walkPatrol" value="YES" required></label>
     <label class="radio-box">NO <input type="radio" name="walkPatrol" value="NO"></label>
   </div>
 
@@ -122,19 +122,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
  
   <div class="yesno">
-    <label>is the Patrol Effective?</label> <label class="radio-box">YES <input type="radio" name="patrolEffective" value="YES"></label>
+    <label>is the Patrol Effective?</label> <label class="radio-box">YES <input type="radio" name="patrolEffective" value="YES" required></label>
     <label class="radio-box">NO <input type="radio" name="patrolEffective" value="NO"></label>
   </div>
 
 
 
   <label>what changes have you made?</label>
-  <textarea id="changesMade"></textarea>
+  <textarea id="changesMade" required></textarea>
 
 
   <label>Is security guard visually checking 10% of QR ID Cards for personal entering commercial premises </label>
   <div class="yesno">
-    <label class="radio-box">YES <input type="radio" name="qrCheck" value="YES"></label>
+    <label class="radio-box">YES <input type="radio" name="qrCheck" value="YES" required></label>
     <label class="radio-box">NO <input type="radio" name="qrCheck" value="NO"></label>
   </div>
 </div>
@@ -142,23 +142,23 @@ document.addEventListener("DOMContentLoaded", () => {
 <div class="section">
   <h3>Check Supervisor Visitation Recored</h3>
   <label>when did guard supervisor Last Visit?</label>
-  <input type="date" id="supervisorLastVisit">
+  <input type="date" id="supervisorLastVisit" required>
 
 
 
   <label>Supervisor name</label>
-  <input id="supervisorName">
+  <input id="supervisorName" required>
 
 
 
   <label>How many upervisors Visited in the last 7 days?)</label>
-  <input type="number" id="supervisors7Days">
+  <input type="number" id="supervisors7Days" required>
 
 
 
  
   <div class="yesno">
-    <label>Is key cabinet Locked and secured?</label> <label class="radio-box">YES <input type="radio" name="keyCabinet" value="YES"></label>
+    <label>Is key cabinet Locked and secured?</label> <label class="radio-box">YES <input type="radio" name="keyCabinet" value="YES" required></label>
     <label class="radio-box">NO <input type="radio" name="keyCabinet" value="NO"></label>
   </div>
 
@@ -166,44 +166,44 @@ document.addEventListener("DOMContentLoaded", () => {
 
   
   <div class="yesno">
-   <label>Is key log being maintained? </label> <label class="radio-box">YES <input type="radio" name="keyLog" value="YES"></label>
+   <label>Is key log being maintained? </label> <label class="radio-box">YES <input type="radio" name="keyLog" value="YES" required></label>
     <label class="radio-box">NO <input type="radio" name="keyLog" value="NO"></label>
   </div>
 
 
 
   <label>List keys audited</label>
-  <textarea id="keysAudited"></textarea>
+  <textarea id="keysAudited" required></textarea>
 </div>
 
 <div class="section">
   <h3>Building</h3>
  
   <div class="yesno">
-    <label>Cameras, working and clear?</label> <label class="radio-box">YES <input type="radio" name="camerasWorking" value="YES"></label>
+    <label>Cameras, working and clear?</label> <label class="radio-box">YES <input type="radio" name="camerasWorking" value="YES" required></label>
     <label class="radio-box">NO <input type="radio" name="camerasWorking" value="NO"></label>
   </div>
 
 
 
   <label>How many cameras?</label>
-  <input type="number" id="numCameras">
+  <input type="number" id="numCameras" required>
 
 
 
   <label>Locking and security on doors (ACS) Functional</label>
-  <input id="acsFunctional">
+  <input id="acsFunctional" required>
 
 
 
   <label>Is the perimeter secure?</label>
-  <input id="perimeterSecure">
+  <input id="perimeterSecure" required>
 </div>
 
 <div class="section">
   <h3>Apartment Inspection</h3>
   <label>Apartment inspection</label>
-  <input id="apartmentInspection">
+  <input id="apartmentInspection" required>
 
 
 
@@ -275,28 +275,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <div class="section">
   <label>Patrolling Supervisor</label> 
-  <input id="patrollingSupervisor">
+  <input id="patrollingSupervisor" required>
   
   <label>S/N</label>
-  <input id="serialNumber">
+  <input id="serialNumber" required>
   
   <label>Building security name</label>
-  <input id="buildingSecurityName">
+  <input id="buildingSecurityName" required>
 
 
 
   <label>Security staff number</label>
-  <input type="number" id="securityStaffNumber">
+  <input type="number" id="securityStaffNumber" required>
 
 
 
   <label>Building landline number</label>
-  <input type="number" id="buildingLandline">
+  <input type="number" id="buildingLandline" required>
 
 
 
   <label>Security duty mobile number</label>
-  <input type="number" id="securityDutyMobile">
+  <input type="number" id="securityDutyMobile" required>
 </div>
 
 <!-- SIGNATURE -->
