@@ -61,6 +61,12 @@ function toDDMMYYYY(dateValue) {
 const canvas = document.getElementById("sign");
 const ctx = canvas.getContext("2d");
 
+const submitBtn = document.getElementById("submitBtn");
+let signed = false;
+
+// disable submit initially (safety)
+submitBtn.disabled = true;
+
 ctx.lineWidth = 2.5;
 ctx.lineCap = "round";
 
@@ -91,6 +97,10 @@ function getPos(e) {
 function startDraw(e) {
   e.preventDefault();
   drawing = true;
+
+   signed = true;
+  submitBtn.disabled = false;
+   
   const p = getPos(e);
   ctx.beginPath();
   ctx.moveTo(p.x, p.y);
@@ -120,6 +130,9 @@ canvas.addEventListener("touchend", endDraw);
 
 function clearSignature() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+   signed = false;
+  submitBtn.disabled = true;
 }
 
 /* ===============================
