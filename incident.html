@@ -124,7 +124,57 @@ document.addEventListener("DOMContentLoaded", () => {
 
   </div>
   <div class="section">
+    <label>Attachments</label>
+   <label class="check-box">
+  <input type="checkbox">
+  <span></span>
+  DESCRIPTION CONTINUATION
+</label>
 
+<label class="check-box">
+  <input type="checkbox">
+  <span></span>
+  PICTURES/ PHOTOGRAPHS
+</label>
+
+    <label class="check-box">
+  <input type="checkbox">
+  <span></span>
+  WITNESS STATEMENT
+</label>
+
+    <label class="check-box">
+  <input type="checkbox">
+  <span></span>
+  OTHERS
+</label>
+
+    <label>Prepared and Reported by</label>
+  <input id="nameofwitness" >
+
+ <!-- SIGNATURE -->
+<div class="section">
+  <label>Signature</label>
+  <canvas id="sign"></canvas>
+  
+  <button type="button" class="secondary" onclick="clearSignature()">Clear Signature</button>
+</div>
+
+<button type="submit">Submit</button>
+<div id="status"></div>
+
+<button type="button" onclick="location.href='menu.html'">
+⬅ Back to Menu
+</button>
+
+</form>
+</div>
+
+<script src="js/aqcl.js"></script>
+</body>
+</html>
+   
+ 
     
   
 ______________________________________________________________________________________________________________________________
