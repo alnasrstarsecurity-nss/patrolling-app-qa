@@ -176,7 +176,8 @@ form.addEventListener("submit", e => {
       witnessName: form.witnessName.value,
       witnessContact: form.witnessContact.value,
       witnessSign: form.witnessSign.value,
-
+      briefIncident: form.briefIncident.value,
+     
       // Attachments
       attachmentType: form.attachmentType.value,
       attach1: form.attach1.value,
