@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <!-- REPORTER -->
 <div class="section">
   <label>Name</label>
-  <select id="name" required>
+  <select id="name">
   <option value="">-- Name --</option>  
 <option value="A">A</option>
 <option value="B">B</option>
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
 </select>
 
    <label>Designation</label>
-  <select id="designation" required>
+  <select id="designation">
   <option value="">-- Designation --</option>  
 <option value="D1">D1</option>
 <option value="D2">D2</option>
@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
   <input type="number" id="empno">
 
    <label>Location</label>
-  <select id="Location" required>
+  <select id="Location">
   <option value="">-- Location --</option>  
   <option value="L1">L1</option>
   <option value="L2">L2</option>
@@ -130,6 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   <div class="section">
     <label>Attachments</label>
+    <select id="attachmentType">
    <label class="check-box">
   <input type="checkbox">
   <span></span>
@@ -155,23 +156,23 @@ document.addEventListener("DOMContentLoaded", () => {
 </label>
 
     <div class="section">
-    <label>Attachment 1</label><input type="file" name="attach1" accept="image/*,application/pdf">
-    <label>Attachment 2</label><input type="file" name="attach2" accept="image/*,application/pdf">
-    <label>Attachment 3</label><input type="file" name="attach3" accept="image/*,application/pdf">
-    <label>Attachment 4</label><input type="file" name="attach4" accept="image/*,application/pdf">\
+    <label>Attachment 1</label><input type="file" input id="attach1" accept="image/*,application/pdf">
+    <label>Attachment 2</label><input type="file" input id="attach2" accept="image/*,application/pdf">
+    <label>Attachment 3</label><input type="file" input id="attach3" accept="image/*,application/pdf">
+    <label>Attachment 4</label><input type="file" input id="attach4" accept="image/*,application/pdf">\
     </div>
 
 
     <label>Prepared and Reported by</label>
-  <input id="reportedby" >
+  <input id="reportedBy" >
 
  <!-- SIGNATURE -->
 <div class="section">
   <label>Signature</label>
-  <canvas id="sign"></canvas>
+  <canvas id="supSignPad"></canvas>
   
-  <button type="button" class="secondary" onclick="clearSignature()">Clear Signature</button>
-</div>
+<button type="button" class="secondary" onclick="clearSupSignature()">Clear Signature</button>
+    </div>
 
 <button type="submit" id="submitBtn" disabled>Submit</button>
 <div id="status"></div>
