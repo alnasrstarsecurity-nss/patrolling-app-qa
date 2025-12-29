@@ -64,12 +64,6 @@ function initSignaturePad(canvasId) {
   const canvas = document.getElementById(canvasId);
   const ctx = canvas.getContext("2d");
 
-
-ctx.lineWidth = 2.5;
-ctx.lineCap = "round";
-
-let drawing = false;
-
   // Make canvas internal size match CSS
   const rect = canvas.getBoundingClientRect();
   canvas.width = rect.width;
