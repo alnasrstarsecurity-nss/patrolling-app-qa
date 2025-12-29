@@ -79,8 +79,8 @@ function resizeCanvas() {
   canvas.width = r.width;
   canvas.height = r.height;
 }
-resizeCanvas();
-window.addEventListener("resize", resizeCanvas);
+//resizeCanvas();
+//window.addEventListener("resize", resizeCanvas);
 
 function getPos(e) {
   const r = canvas.getBoundingClientRect();
@@ -98,6 +98,10 @@ function getPos(e) {
 
 function startDraw(e) {
   e.preventDefault();
+   
+ if (document.activeElement) {
+    document.activeElement.blur();
+  }
   drawing = true;
 
    signed = true;
