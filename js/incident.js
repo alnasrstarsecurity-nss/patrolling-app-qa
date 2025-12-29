@@ -155,42 +155,37 @@ form.addEventListener("submit", e => {
   const payload = {
     action: "submitINCIDENT",
 
-    Name: Name.value,
-    guardPosition: radio("guardPosition"),
-    numGuards: numGuards.value,
-    guardAppearance: guardAppearance.value,
-    deskAppearance: deskAppearance.value,
-    guardContact: guardContact.value,
-    walkPatrol: radio("walkPatrol"),
-    patrolEffective: radio("patrolEffective"),
-    changesMade: changesMade.value,
-    qrCheck: radio("qrCheck"),
-    supervisorLastVisit: toDDMMYYYY(supervisorLastVisit.value),
-    //supervisorLastVisit: supervisorLastVisit.value,
-    supervisorName: supervisorName.value,
-    supervisors7Days: supervisors7Days.value,
-    keyCabinet: radio("keyCabinet"),
-    keyLog: radio("keyLog"),
-    keysAudited: keysAudited.value,
-    camerasWorking: radio("camerasWorking"),
-    numCameras: numCameras.value,
-    acsFunctional: acsFunctional.value,
-    perimeterSecure: perimeterSecure.value,
-    apartmentInspection: apartmentInspection.value,
-    apartmentRemark: apartmentRemark.value,
-    actionsTaken: actionsTaken.value,
+      // Main info
+      name: form.name.value,
+      designation: form.designation.value,
+      empno: form.empno.value,
+      location: form.location.value,
+      contact: form.contact.value,
+      shift: form.shift.value,
+      exactLocation: form.exactLocation.value,
+      date: form.date.value,
+      time: form.time.value,
+      blueplate: form.blueplate.value,
+      incidentType: form.incidentType.value,
+      otherIncident: form.otherIncident.value,
 
-    guard1CAG: guard1CAG,
-    guard2CAG: guard2CAG,
+      // Witness info
+      witnessName: form.witnessName.value,
+      witnessContact: form.witnessContact.value,
+      witnessSign: form.witnessSign.value,
 
-    patrollingSupervisor: patrollingSupervisor.value,
-    serialNumber: serialNumber.value,
-    buildingSecurityName: buildingSecurityName.value,
-    securityStaffNumber: securityStaffNumber.value,
+      // Attachments
+      attachmentType: form.attachmentType.value,
+      attach1: form.attach1.value,
+      attach2: form.attach2.value,
+      attach3: form.attach3.value,
+      attach4: form.attach4.value,
 
-    signature: canvas.toDataURL(),
-    buildingLandline: buildingLandline.value,
-    securityDutyMobile: securityDutyMobile.value
+      // Reporting info
+      reportedBy: form.reportedBy.value,
+      supSign: form.supSign.value,
+      reportText: form.reportText.value,
+
   };
 
   fetch(SCRIPT_URL, {
