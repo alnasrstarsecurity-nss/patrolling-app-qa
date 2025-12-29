@@ -60,8 +60,12 @@ function toDDMMYYYY(dateValue) {
 /* ===============================
    SIGNATURE PAD (MOUSE + TOUCH)
 ================================ */
-const canvas = document.getElementById("witnessSignPad");
-const ctx = canvas.getContext("2d");
+const witnessCanvas = document.getElementById("witnessSignPad");
+const witnessCtx = witnessCanvas.getContext("2d");
+
+const supCanvas = document.getElementById("supSignPad");
+const supCtx = supCanvas.getContext("2d");
+
 
 const submitBtn = document.getElementById("submitBtn");
 let signed = false;
@@ -82,57 +86,55 @@ function resizeCanvas() {
 //resizeCanvas();
 //window.addEventListener("resize", resizeCanvas);
 
-function getPos(e) {
-  const r = canvas.getBoundingClientRect();
-  if (e.touches) {
-    return {
-      x: e.touches[0].clientX - r.left,
-      y: e.touches[0].clientY - r.top
-    };
+function initSignaturePad(canvas, ctx) {
+  let drawing = false;
+
+  function getPos(e) {
+    const r = canvas.getBoundingClientRect();
+    if (e.touches) {
+      return {
+        x: e.touches[0].clientX - r.left,
+        y: e.touches[0].clientY - r.top
+      };
+    }
+    return { x: e.offsetX, y: e.offsetY };
   }
-  return {
-    x: e.offsetX,
-    y: e.offsetY
-  };
-}
 
-function startDraw(e) {
-  e.preventDefault();
-   
- if (document.activeElement) {
-    document.activeElement.blur();
+  function startDraw(e) {
+    e.preventDefault();
+    if (document.activeElement) document.activeElement.blur();
+    drawing = true;
+    const p = getPos(e);
+    ctx.beginPath();
+    ctx.moveTo(p.x, p.y);
   }
-  drawing = true;
 
-   signed = true;
-  submitBtn.disabled = false;
-   
-  const p = getPos(e);
-  ctx.beginPath();
-  ctx.moveTo(p.x, p.y);
+  function draw(e) {
+    if (!drawing) return;
+    e.preventDefault();
+    const p = getPos(e);
+    ctx.lineTo(p.x, p.y);
+    ctx.stroke();
+  }
+
+  function endDraw(e) {
+    e.preventDefault();
+    drawing = false;
+  }
+
+  canvas.addEventListener("mousedown", startDraw);
+  canvas.addEventListener("mousemove", draw);
+  canvas.addEventListener("mouseup", endDraw);
+  canvas.addEventListener("mouseleave", endDraw);
+
+  canvas.addEventListener("touchstart", startDraw, { passive: false });
+  canvas.addEventListener("touchmove", draw, { passive: false });
+  canvas.addEventListener("touchend", endDraw);
 }
 
-function draw(e) {
-  if (!drawing) return;
-  e.preventDefault();
-  const p = getPos(e);
-  ctx.lineTo(p.x, p.y);
-  ctx.stroke();
-}
-
-function endDraw(e) {
-  e.preventDefault();
-  drawing = false;
-}
-
-canvas.addEventListener("mousedown", startDraw);
-canvas.addEventListener("mousemove", draw);
-canvas.addEventListener("mouseup", endDraw);
-canvas.addEventListener("mouseleave", endDraw);
-
-canvas.addEventListener("touchstart", startDraw, { passive: false });
-canvas.addEventListener("touchmove", draw, { passive: false });
-canvas.addEventListener("touchend", endDraw);
+// Initialize both pads
+initSignaturePad(witnessCanvas, witnessCtx);
+initSignaturePad(supCanvas, supCtx);
 
 function clearSignature() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
