@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /* ===============================
    CONFIG
 ================================ */
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwEEsjIdgybD2lBB4itz6uHPbBINsQgPYFFE14hlf-MbD77h98zl7NaPMoTheoxa5KmLg/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxyOhmp7BLfJ1mmlJQq-LSHRk2bN6JK6lvui7lxYwf5eg_aVXjYNkWpUDqBWNc6YinG9A/exec";
 
 const form = document.getElementById("incidentform");
 const status = document.getElementById("status");
@@ -169,11 +169,11 @@ form.addEventListener("submit", e => {
       // Witness info
       witnessName: form.witnessName.value,
       witnessContact: form.witnessContact.value,
-      witnessSign: form.witnessSign.value,
+      witnessSign: document.getElementById("witnessSignPad").toDataURL(),
       briefIncident: form.briefIncident.value,
      
       // Attachments
-      attachmentType: form.attachmentType.value,
+      attachmentType: attachmentTypes,
       attach1: form.attach1.value,
       attach2: form.attach2.value,
       attach3: form.attach3.value,
@@ -181,7 +181,7 @@ form.addEventListener("submit", e => {
 
       // Reporting info
       reportedBy: form.reportedBy.value,
-      supSign: form.supSign.value,
+      supSign: document.getElementById("supSignPad").toDataURL(),
       reportText: form.reportText.value,
 
   };
