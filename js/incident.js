@@ -64,10 +64,6 @@ function initSignaturePad(canvasId) {
   const canvas = document.getElementById(canvasId);
   const ctx = canvas.getContext("2d");
 
-  
-
-// disable submit initially (safety)
-submitBtn.disabled = true;
 
 ctx.lineWidth = 2.5;
 ctx.lineCap = "round";
