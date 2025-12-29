@@ -60,7 +60,7 @@ function toDDMMYYYY(dateValue) {
 /* ===============================
    SIGNATURE PAD (MOUSE + TOUCH)
 ================================ */
-const canvas = document.getElementById("sign");
+const canvas = document.getElementById("witnessSignPad");
 const ctx = canvas.getContext("2d");
 
 const submitBtn = document.getElementById("submitBtn");
