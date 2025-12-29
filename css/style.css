@@ -288,3 +288,31 @@ canvas {
 .spacer {
   flex: 1;
 }
+
+
+//incident form style 
+
+.check-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 6px 4px;
+}
+
+.check-row span {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.check-row .grade {
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+.check-row input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+}
+//incident form style 
