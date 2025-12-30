@@ -166,7 +166,7 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
 
   <div class="section">
-    <h3>Acknowledgement of Report</h3>
+    <h3>Acknowledgement of Report</h3><br>
   <label>Attachment Type</label>
    <div class="check-row">
     <label><input type="checkbox" id="attachmentType" name="attachmentType" value="Descriptioncontinuation">
@@ -193,13 +193,14 @@ document.addEventListener("DOMContentLoaded", () => {
       
 
     <div class="section">
+     <h3>Upload Files</h3> <br>
     <label>Attachment 1</label><input type="file" input id="attach1" name="attach1" accept="image/*,application/pdf">
     <label>Attachment 2</label><input type="file" input id="attach2" name="attach2" accept="image/*,application/pdf">
     <label>Attachment 3</label><input type="file" input id="attach3" name="attach3" accept="image/*,application/pdf">
     <label>Attachment 4</label><input type="file" input id="attach4" name="attach4" accept="image/*,application/pdf">
     </div>
 
-  <div class="section">
+  
     <label>Prepared and Reported by</label>
   <input id="reportedBy" name="reportedBy">
 
@@ -209,7 +210,7 @@ document.addEventListener("DOMContentLoaded", () => {
   <canvas id="supSignPad" name="supSignPad"></canvas>
   
 <button type="button" class="secondary" onclick="clearSupSignature()">Clear Signature</button>
-    </div>
+   
 
 <button type="submit" id="submitBtn">Submit</button>
 <div id="status"></div>
