@@ -19,6 +19,14 @@
   <script src="js/auth.js"></script>
 </head>
 <body>
+<script>
+(function () {
+  if (localStorage.getItem("LOGGED_IN") !== "YES") {
+    window.location.replace("index.html");
+  }
+})();
+</script>
+  
   <script>
 document.addEventListener("DOMContentLoaded", () => {
   const loginState = localStorage.getItem("LOGGED_IN");
