@@ -21,13 +21,8 @@
 <body>
   
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-  const logged = sessionStorage.getItem("LOGGED_IN");
-
-  if (logged !== "YES") {
-    window.location.replace("index.html");
-  }
-});
+/* Always force login page */
+sessionStorage.clear();
 </script>
 
 
