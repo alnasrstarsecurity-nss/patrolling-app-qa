@@ -306,13 +306,17 @@ sessionStorage.clear();
 <button type="submit" id="submitBtn" disabled>Submit</button>
 <div id="status"></div>
 
-<button type="button" onclick="location.href='menu.html'">
-⬅ Back to Menu
-</button>
-
 </form>
+  <button type="button" onclick="goBack()">
+  ⬅ Back to Menu
+</button>
 </div>
 
+  <script>
+function goBack() {
+  window.history.back();
+}
+</script>
   
 <script src="js/aqcl.js"></script>
 </body>
