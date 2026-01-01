@@ -81,8 +81,6 @@ function blurActiveInputSafely() {
 function initSignaturePad(canvasId) {
   const canvas = document.getElementById(canvasId);
   const ctx = canvas.getContext("2d");
-
-    const submitBtn = document.getElementById("submitBtn");
     
 
   // Make canvas internal size match CSS
@@ -118,7 +116,8 @@ function initSignaturePad(canvasId) {
     e.preventDefault();
     blurActiveInputSafely();
     drawing = true;
-    signed = true;
+
+     
      //validation
      
      //validation
