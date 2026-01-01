@@ -75,7 +75,10 @@ function initSignaturePad(canvasId) {
   ctx.strokeStyle = "#000000";
 
   let drawing = false;
-
+   // disabled initially
+   submitBtn.disabled = true; 
+   // disabled initially
+   
   function getPos(e) {
     const r = canvas.getBoundingClientRect();
     if (e.touches) {
@@ -92,6 +95,10 @@ function initSignaturePad(canvasId) {
 
   function startDraw(e) {
     e.preventDefault();
+     //focus issue
+    if (document.activeElement) {
+    document.activeElement.blur();
+      //focus issue
     drawing = true;
 
       signed = true;
@@ -103,7 +110,7 @@ function initSignaturePad(canvasId) {
   }
 
   function draw(e) {
-    document.activeElement.blur();
+    
     if (!drawing) return;
     e.preventDefault();
     const p = getPos(e);
