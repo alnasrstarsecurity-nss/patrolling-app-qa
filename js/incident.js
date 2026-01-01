@@ -66,6 +66,14 @@ function toDDMMYYYY(dateValue) {
   return `${d}/${m}/${y}`;
 }
 
+function blurActiveInputSafely() {
+  const el = document.activeElement;
+  if (!el) return;
+
+  if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
+    setTimeout(() => el.blur(), 0);
+  }
+}
 
 
 /* ===============================
@@ -102,6 +110,7 @@ function initSignaturePad(canvasId) {
 
   function startDraw(e) {
     e.preventDefault();
+    blurActiveInputSafely();
     drawing = true;
     const p = getPos(e);
     ctx.beginPath();
