@@ -27,6 +27,11 @@ const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx0WYv6owseLdZr_2dNZ
 const form = document.getElementById("incidentform");
 const status = document.getElementById("status");
 
+//signature validation
+const submitBtn = document.getElementById("submitBtn");
+submitBtn.disabled = true;
+//signature validation
+
 /* ===============================
    RADIO HELPER
 ================================ */
@@ -78,26 +83,21 @@ function blurActiveInputSafely() {
 /* ===============================
    SIGNATURE PAD (MOUSE + TOUCH)
 ================================ */
-function initSignaturePad(canvasId) {
+function initSignaturePad(canvasId, onSigned, onCleared) {
   const canvas = document.getElementById(canvasId);
   const ctx = canvas.getContext("2d");
-    
 
-  // Make canvas internal size match CSS
   const rect = canvas.getBoundingClientRect();
   canvas.width = rect.width;
   canvas.height = rect.height;
 
   ctx.lineWidth = 2.5;
   ctx.lineCap = "round";
-  ctx.strokeStyle = "#000000"; // black color
-  let signed = false;
+  ctx.strokeStyle = "#000000";
+
   let drawing = false;
-  // signatur validation
-    
-  
-//signature validation
-   
+  let hasSignature = false;
+
   function getPos(e) {
     const r = canvas.getBoundingClientRect();
     if (e.touches) {
@@ -115,12 +115,14 @@ function initSignaturePad(canvasId) {
   function startDraw(e) {
     e.preventDefault();
     blurActiveInputSafely();
+
     drawing = true;
 
-     
-     //validation
-     
-     //validation
+    if (!hasSignature) {
+      hasSignature = true;
+      onSigned && onSigned();
+    }
+
     const p = getPos(e);
     ctx.beginPath();
     ctx.moveTo(p.x, p.y);
@@ -135,33 +137,32 @@ function initSignaturePad(canvasId) {
   }
 
   function endDraw(e) {
-    if (!drawing) return;
-    e.preventDefault();
     drawing = false;
   }
 
-  // Mouse events
   canvas.addEventListener("mousedown", startDraw);
   canvas.addEventListener("mousemove", draw);
   canvas.addEventListener("mouseup", endDraw);
   canvas.addEventListener("mouseleave", endDraw);
 
-  // Touch events
   canvas.addEventListener("touchstart", startDraw, { passive: false });
   canvas.addEventListener("touchmove", draw, { passive: false });
   canvas.addEventListener("touchend", endDraw);
 
-  // Clear function
-  return () => ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-   //validation
-    
-   //validation
+  return () => {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    hasSignature = false;
+    onCleared && onCleared();
+  };
 }
 
 // Initialize both pads
 const clearWitnessSignature = initSignaturePad("witnessSignPad");
-const clearSupSignature = initSignaturePad("supSignPad");
+const clearSupSignature = initSignaturePad(
+  "supSignPad",
+  () => submitBtn.disabled = false, // on signed
+  () => submitBtn.disabled = true   // on cleared
+);
 
 // Attach clear buttons
 window.clearWitnessSignature = clearWitnessSignature;
