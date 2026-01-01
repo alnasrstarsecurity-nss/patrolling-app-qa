@@ -83,6 +83,7 @@ function initSignaturePad(canvasId) {
   const ctx = canvas.getContext("2d");
 
     const submitBtn = document.getElementById("submitBtn");
+    let signed = false;
 
   // Make canvas internal size match CSS
   const rect = canvas.getBoundingClientRect();
@@ -94,7 +95,12 @@ function initSignaturePad(canvasId) {
   ctx.strokeStyle = "#000000"; // black color
 
   let drawing = false;
-
+  // signatur validation
+    if (options.required) {
+    submitBtn.disabled = true;
+  }
+//signature validation
+   
   function getPos(e) {
     const r = canvas.getBoundingClientRect();
     if (e.touches) {
@@ -113,6 +119,12 @@ function initSignaturePad(canvasId) {
     e.preventDefault();
     blurActiveInputSafely();
     drawing = true;
+    signed = true;
+     //validation
+      if (options.required) {
+      submitBtn.disabled = false;
+    }
+     //validation
     const p = getPos(e);
     ctx.beginPath();
     ctx.moveTo(p.x, p.y);
