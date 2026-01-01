@@ -96,8 +96,8 @@ function initSignaturePad(canvasId) {
   function startDraw(e) {
     e.preventDefault();
      //focus issue
-    if (document.activeElement) {
-    document.activeElement.blur();
+     //  if (document.activeElement) {
+     // document.activeElement.blur();
       //focus issue
     drawing = true;
 
