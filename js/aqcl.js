@@ -34,6 +34,15 @@ function resizeCanvasToDisplaySize(canvas) {
   canvas.height = rect.height;
 }
 
+function blurActiveInputSafely() {
+  const el = document.activeElement;
+  if (!el) return;
+
+  if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
+    setTimeout(() => el.blur(), 0);
+  }
+}
+
 /* ===============================
    date format
 ================================ */
@@ -96,8 +105,7 @@ function initSignaturePad(canvasId) {
   function startDraw(e) {
     e.preventDefault();
      //focus issue
-     //  if (document.activeElement) {
-     // document.activeElement.blur();
+       blurActiveInputSafely();
       //focus issue
     drawing = true;
 
