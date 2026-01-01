@@ -7,7 +7,7 @@ function requireLogin() {
   }
 }*/
 
-requireLogin();
+//requireLogin();
 
 document.addEventListener("DOMContentLoaded", () => {
   const loginState = localStorage.getItem("LOGGED_IN");
