@@ -147,21 +147,18 @@ function clearSignature() {
 }
 */
 /* NEW SIGNATURE CODE*/
-document.addEventListener("DOMContentLoaded", () => {
-
-  const canvas = document.getElementById("sign");
+function initSignaturePad(canvasId) {
+  const canvas = document.getElementById(canvasId);
   const ctx = canvas.getContext("2d");
 
-  function resizeCanvasToDisplaySize(canvas) {
-    const rect = canvas.getBoundingClientRect();
-    canvas.width = rect.width;
-    canvas.height = rect.height;
-  }
-
-  resizeCanvasToDisplaySize(canvas);
+  // Match internal canvas size to CSS size (only once)
+  const rect = canvas.getBoundingClientRect();
+  canvas.width = rect.width;
+  canvas.height = rect.height;
 
   ctx.lineWidth = 2.5;
   ctx.lineCap = "round";
+  ctx.strokeStyle = "#000000";
 
   let drawing = false;
 
@@ -173,16 +170,15 @@ document.addEventListener("DOMContentLoaded", () => {
         y: e.touches[0].clientY - r.top
       };
     }
-    return { x: e.offsetX, y: e.offsetY };
+    return {
+      x: e.clientX - r.left,
+      y: e.clientY - r.top
+    };
   }
 
   function startDraw(e) {
     e.preventDefault();
-    if (document.activeElement) document.activeElement.blur();
     drawing = true;
-    signed = true;
-    submitBtn.disabled = false;
-
     const p = getPos(e);
     ctx.beginPath();
     ctx.moveTo(p.x, p.y);
@@ -197,25 +193,32 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function endDraw(e) {
+    if (!drawing) return;
     e.preventDefault();
     drawing = false;
   }
 
+  // Mouse events
   canvas.addEventListener("mousedown", startDraw);
   canvas.addEventListener("mousemove", draw);
   canvas.addEventListener("mouseup", endDraw);
   canvas.addEventListener("mouseleave", endDraw);
 
+  // Touch events
   canvas.addEventListener("touchstart", startDraw, { passive: false });
   canvas.addEventListener("touchmove", draw, { passive: false });
   canvas.addEventListener("touchend", endDraw);
 
-  window.clearSignature = function () {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    signed = false;
-    submitBtn.disabled = true;
-  };
-});
+  // Clear function
+  return () => ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
+
+// Initialize ONE signature pad
+const clearAqclSignature = initSignaturePad("sign");
+
+// Expose clear button function if you have one
+window.clearAqclSignature = clearAqclSignature;
+
 
 /* ===============================
    FORM SUBMISSION
