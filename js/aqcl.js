@@ -103,6 +103,7 @@ function initSignaturePad(canvasId) {
   }
 
   function draw(e) {
+    document.activeElement.blur();
     if (!drawing) return;
     e.preventDefault();
     const p = getPos(e);
