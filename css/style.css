@@ -305,7 +305,7 @@ canvas {
   align-items: center;
   gap: 8px;
   margin: 0;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .check-row input[type="checkbox"] {
