@@ -39,7 +39,17 @@ if (sessionStorage.getItem("LOGGED_IN") !== "YES") {
 
 <form id="fireForm">
 
-<!-- Accommodation -->
+  <div class="section">
+  <h3>Incident Details</h3>
+  <select id="BuildingName" required style="width:100%" required>
+  <<option value="">-- Select Building --</option> 
+<option value="BUILDING 1">BUILDING 1</option>
+<option value="BUILDING 2">BUILDING 2</option>
+<option value="BUILDING 3">BUILDING 3</option>
+<option value="BUILDING 4">BUILDING 4</option>
+<option value="BUILDING 5">BUILDING 5</option>
+</select>
+____________________________________________________________________________________________________________________________________
 <div class="section">
   <h3>Accommodation Name</h3>
   <select id="accName" required style="width:100%" required>
