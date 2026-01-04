@@ -43,15 +43,15 @@ if (sessionStorage.getItem("LOGGED_IN") !== "YES") {
   <h3>Incident Details</h3>
   <select id="BuildingName" required style="width:100%" required>
   <<option value="">-- Select Building --</option> 
-<option value="BUILDING 1">BUILDING 1</option>
-<option value="BUILDING 2">BUILDING 2</option>
-<option value="BUILDING 3">BUILDING 3</option>
-<option value="BUILDING 4">BUILDING 4</option>
-<option value="BUILDING 5">BUILDING 5</option>
-</select>
+  <option value="BUILDING 1">BUILDING 1</option>
+  <option value="BUILDING 2">BUILDING 2</option>
+  <option value="BUILDING 3">BUILDING 3</option>
+  <option value="BUILDING 4">BUILDING 4</option>
+  <option value="BUILDING 5">BUILDING 5</option>
+  </select>
 
 
-  <div class="radio-row">
+       <div class="radio-row">
        <label>Type of Incident :</label> 
        <label class="radio-box">Fire Alarm <input type="radio" name="TypeofInciden" value="Fire Alarm"></label>
        <label class="radio-box">Fire Incident <input type="radio" name="TypeofInciden" value="Fire Incident"></label>
@@ -92,6 +92,36 @@ if (sessionStorage.getItem("LOGGED_IN") !== "YES") {
      <label><input type="checkbox" id="AlarmActivated" name="AlarmActivated" value="Bed Room">
      <span>Bed Room</span></label>
      </div>
+
+     <div class="check-row">
+     <label><input type="checkbox" id="AlarmActivated" name="AlarmActivated" value="Electrical Room">
+     <span>Electrical Room</span></label>
+     </div>
+
+     <div class="check-row">
+     <label><input type="checkbox" id="AlarmActivated" name="AlarmActivated" value="Garbage Room">
+     <span>Garbage Room</span></label>
+     </div>
+
+     <div class="check-row">
+     <label><input type="checkbox" id="AlarmActivated" name="AlarmActivated" value="Corridor">
+     <span>Corridor</span></label>
+     </div>
+
+     <div class="check-row">
+     <label><input type="checkbox" id="AlarmActivated" name="AlarmActivated" value="Basement">
+     <span>Basement</span></label>
+     </div>
+
+     <div class="check-row">
+     <label><input type="checkbox" id="AlarmActivated" name="AlarmActivated" value="Other Area">
+     <span>Other Area</span></label>
+     </div>
+
+    <label>Other Area</label>
+  <input id="Area" required>
+
+    
 ____________________________________________________________________________________________________________________________________
 <div class="section">
   <h3>Accommodation Name</h3>
