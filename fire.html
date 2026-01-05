@@ -51,7 +51,7 @@ if (sessionStorage.getItem("LOGGED_IN") !== "YES") {
   </select>
 
 
-       <div class="yesno">
+  <!--     <div class="yesno">
        <label style="font-weight: bold;">Type of Incident:</label> 
        <label class="radio-box">Fire Alarm <input type="radio" name="TypeofInciden" value="Fire Alarm"></label>
        <label class="radio-box">Fire Incident <input type="radio" name="TypeofInciden" value="Fire Incident"></label>
@@ -61,8 +61,24 @@ if (sessionStorage.getItem("LOGGED_IN") !== "YES") {
        <label style="font-weight: bold;">Evacuated: &nbsp&nbsp&nbsp</label> 
        <label class="radio-box">Yes <input type="radio" name="guardPosition" value="Yes"></label>
        <label class="radio-box">No <input type="radio" name="guardPosition" value="No"></label>
+       </div>    -->
+
+    <div class="radio-grid">
+    <div class="row">
+       <label class="label">Type of Incident:</label> 
+       <label>Fire Alarm <input type="radio" name="TypeofInciden" value="Fire Alarm"></label>
+       <label>Fire Incident <input type="radio" name="TypeofInciden" value="Fire Incident"></label>
        </div>
 
+      <div class="row">
+       <label class="label">Evacuated: &nbsp&nbsp&nbsp</label> 
+       <label>Yes <input type="radio" name="guardPosition" value="Yes"></label>
+       <label>No <input type="radio" name="guardPosition" value="No"></label>
+       </div> 
+      </div> 
+      
+
+    
       <label>Date of Incident</label>
       <input type="date" id="Incidentdate" name="Incidentdate">
 
