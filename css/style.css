@@ -322,34 +322,3 @@ canvas {
   font-size: 14px;
   font-weight: 400;
 }
-/*incident form style *//* row grid*//* row grid*//* row grid*/
-
-/* row grid*/
-.radio-grid {
-  display: grid;
-  row-gap: 12px;
-}
-
-.radio-grid .row {
-  display: grid;
-  grid-template-columns: 220px 100px 100px 100px;
-  align-items: center;
-}
-
-.radio-grid .label {
-  font-weight: 600;
-}
-
-.radio-grid label {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-weight: 400;
-}
-@media (max-width: 600px) {
-  .incident-grid .row {
-    grid-template-columns: 1fr;
-    row-gap: 6px;
-  }
-}
-/* row grid*//* row grid*//* row grid*//* row grid*//* row grid*/
