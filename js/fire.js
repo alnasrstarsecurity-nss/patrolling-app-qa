@@ -4,7 +4,7 @@
 ================================ */
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyGO6yvbwwxM-RqPxCXU9rkOj4P3sGVGOK-gtr1AHmFuMzex82lAWkyS2bdy2GKRj6dlQ/exec";
 
-const form = document.getElementById("fireform");
+const form = document.getElementById("fireForm");
 const status = document.getElementById("status");
 
 /* ===============================
