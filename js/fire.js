@@ -19,7 +19,6 @@ form.addEventListener("submit", e => {
   e.preventDefault();
 
     submitBtn.disabled = true;
-  submitBtn.innerText = "Submitting...";
 
   status.innerText = "Submitting...";
   status.style.color = "blue";
