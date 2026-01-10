@@ -68,7 +68,7 @@ function login() {
   .then(res => {
   if (res.status === "success") {
   sessionStorage.setItem("LOGGED_IN", "YES");
-  sessionStorage.setItem("USERNAME", user.value);
+  //sessionStorage.setItem("USERNAME", user.value);
   sessionStorage.setItem("LOGIN_NAME", res.name); ;
 
   // 🔒 ensure storage is written before redirect
