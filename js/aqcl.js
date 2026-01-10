@@ -149,6 +149,7 @@ window.clearAqclSignature = clearAqclSignature;
 ================================ */
 form.addEventListener("submit", e => {
   e.preventDefault();
+   submitBtn.disabled = true;
 
   status.innerText = "Submitting...";
   status.style.color = "blue";
