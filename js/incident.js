@@ -154,6 +154,7 @@ window.clearSupSignature = clearSupSignature;
 ================================ */
 form.addEventListener("submit", async e => {
   e.preventDefault();
+   submitBtn.disabled = true;
 
   status.innerText = "Submitting...";
   status.style.color = "blue";
