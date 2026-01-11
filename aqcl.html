@@ -272,7 +272,11 @@ if (sessionStorage.getItem("LOGGED_IN") !== "YES") {
 
 <div class="section">
   <label>Patrolling Supervisor</label> 
-  <input id="patrollingSupervisor" required>
+<input id="patrollingSupervisor"
+  name="patrollingSupervisor"
+  type="text"
+  required
+  readonly>
   
   <label>S/N</label>
   <input id="serialNumber" required>
