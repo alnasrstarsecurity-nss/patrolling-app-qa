@@ -53,26 +53,26 @@ if (sessionStorage.getItem("LOGGED_IN") !== "YES") {
 
        <div class="yesno">
        <label style="font-weight: bold;">Type of Incident:</label> 
-       <label class="radio-box">Fire Alarm <input type="radio" name="TypeofInciden" value="Fire Alarm"></label>
+       <label class="radio-box">Fire Alarm <input type="radio" name="TypeofInciden" value="Fire Alarm" required></label>
        <label class="radio-box">Fire Incident <input type="radio" name="TypeofInciden" value="Fire Incident"></label>
        </div>
 
       <div class="yesno">
        <label style="font-weight: bold;">Evacuated: &nbsp&nbsp&nbsp</label> 
-       <label class="radio-box">Yes <input type="radio" name="guardPosition" value="Yes"></label>
+       <label class="radio-box">Yes <input type="radio" name="guardPosition" value="Yes" required></label>
        <label class="radio-box">No <input type="radio" name="guardPosition" value="No"></label>
        </div>
       
 
     
       <label>Date of Incident</label>
-      <input type="date" id="Incidentdate" name="Incidentdate">
+      <input type="date" id="Incidentdate" name="Incidentdate" required>
 
       <label for="time">Incident Time</label>
-      <input type="time" id="Incidenttime" name="incidenttime">
+      <input type="time" id="Incidenttime" name="incidenttime" required>
 
       <label for="time">Panel Reset Time</label>
-      <input type="time" id="paneltime" name="paneltime">
+      <input type="time" id="paneltime" name="paneltime" required>
 
       <label>Alarm Activated In</label><br>
       <div class="check-row">
@@ -204,13 +204,13 @@ if (sessionStorage.getItem("LOGGED_IN") !== "YES") {
 
        <div class="yesno">
         <label style="font-weight: bold;">Fire Blanket Used: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>    
-       <label class="radio-box">Yes<input type="radio" name="FireBlanket" value="Yes"></label>
+       <label class="radio-box">Yes<input type="radio" name="FireBlanket" required value="Yes"></label>
        <label class="radio-box">No<input type="radio" name="FireBlanket" value="No"></label>
        </div>
 
        <div class="yesno">
         <label style="font-weight: bold;">Fire Extinguisher Used:</label>    
-        <label class="radio-box">Yes<input type="radio" name="FireExtinguisher" value="Yes"></label>
+        <label class="radio-box">Yes<input type="radio" name="FireExtinguisher" required value="Yes"></label>
        <label class="radio-box">No<input type="radio" name="FireExtinguisher" value="No"></label>
        </div>
        </div>
@@ -244,34 +244,34 @@ if (sessionStorage.getItem("LOGGED_IN") !== "YES") {
 
          <div class="yesno">
        <label style="font-weight: bold;">Civil Defense Present:</label> 
-       <label class="radio-box">Yes<input type="radio" name="Civil Defense" value="Yes"></label>
+       <label class="radio-box">Yes<input type="radio" name="Civil Defense" required value="Yes"></label>
        <label class="radio-box">No<input type="radio" name="Civil Defense" value="NO"></label>
        </div>
 
        <div class="yesno">
        <label style="font-weight: bold;">CAMS activated: &nbsp&nbsp&nbsp&nbsp</label>    
-       <label class="radio-box">Yes<input type="radio" name="CAMS" value="Yes"></label>
+       <label class="radio-box">Yes<input type="radio" name="CAMS" required value="Yes"></label>
        <label class="radio-box">No<input type="radio" name="CAMS" value="No"></label>
        <label class="radio-box">N/A<input type="radio" name="CAMS" value="N/A"></label>
        </div>
 
        <div class="yesno">
         <label style="font-weight: bold;">Injury reported by Occupant:</label>    
-       <label class="radio-box">Yes<input type="radio" name="Injury" value="Yes"></label>
+       <label class="radio-box">Yes<input type="radio" name="Injury" required value="Yes"></label>
        <label class="radio-box">No<input type="radio" name="Injury" value="No"></label>
        </div>
 
          <label>Description of the Incident</label>
-         <input id="DescriptionIncident">
+         <input id="DescriptionIncident" required>
          
 
          <label>Cause of the incident</label>
-         <input id="Cause">
+         <input id="Cause" required>
 
 
        <div class="yesno">
         <label style="font-weight: bold;">Any Property Damage:</label>    
-       <label class="radio-box">Yes<input type="radio" name="Damage" value="Yes"></label>
+       <label class="radio-box">Yes<input type="radio" name="Damage" required value="Yes"></label>
        <label class="radio-box">No<input type="radio" name="Damage" value="No"></label>
        </div>
 
@@ -279,7 +279,7 @@ if (sessionStorage.getItem("LOGGED_IN") !== "YES") {
          <input id="SpecifyDamage">
 
           <label>Action taken/observations by the guard</label>
-         <textarea id="Actiontaken"></textarea>
+         <textarea id="Actiontaken" required></textarea>
          
      </div>
 
@@ -287,10 +287,10 @@ if (sessionStorage.getItem("LOGGED_IN") !== "YES") {
        <div class="section">
          <h3>Other Information</h3>
          <label>Name of the Security Guard :</label>
-         <input id="GuardName">
+         <input id="GuardName" required>
 
          <label>Staff No: </label>
-         <input id="StaffNo">
+         <input id="StaffNo" required>
 
          <div class="yesno">
         <label style="font-weight: bold;">Company Name:</label>    
@@ -299,16 +299,16 @@ if (sessionStorage.getItem("LOGGED_IN") !== "YES") {
 
         <div class="yesno">
         <label style="font-weight: bold;">Did you Inform QR Facilities Staff:</label>    
-       <label class="radio-box">Yes<input type="radio" name="InformQR" value="Yes"></label>
+       <label class="radio-box">Yes<input type="radio" name="InformQR" required value="Yes"></label>
        <label class="radio-box">No<input type="radio" name="InformQR" value="No"></label>
           </div>
 
           <label>Name :</label>
-         <input id="QRStafName">
+         <input id="QRStafName" required>
 
          <div class="yesno">
         <label style="font-weight: bold;">Did you meet the occupant during the incident:</label>    
-       <label class="radio-box">Yes<input type="radio" name="MeetOccupant" value="Yes"></label>
+       <label class="radio-box">Yes<input type="radio" name="MeetOccupant" required value="Yes"></label>
        <label class="radio-box">No<input type="radio" name="MeetOccupant" value="No"></label>
            </div>
        </div>  
