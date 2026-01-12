@@ -69,6 +69,7 @@ function login() {
     if (res.status === "success") {
       sessionStorage.setItem("LOGGED_IN", "YES");
       sessionStorage.setItem("LOGIN_NAME", res.name);
+      sessionStorage.setItem("QAID",res.qaid);
       window.location.replace("menu.html");
     } else {
       msg.innerText = "❌ Wrong username or password";
