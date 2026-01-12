@@ -4,6 +4,22 @@ const form = document.getElementById("fireForm");
 const status = document.getElementById("status");
 const submitBtn = form.querySelector('button[type="submit"]');
 
+//specify damage
+const damageRadios = document.querySelectorAll('input[name="Damage"]');
+const specifyDamage = document.getElementById("SpecifyDamage");
+
+damageRadios.forEach(radio => {
+  radio.addEventListener("change", () => {
+    if (radio.value === "Yes" && radio.checked) {
+      specifyDamage.required = true;
+    } else if (radio.value === "No" && radio.checked) {
+      specifyDamage.required = false;
+      specifyDamage.value = ""; // optional: clear field
+    }
+  });
+});
+//specify damage
+
 function radio(name) {
   const r = document.querySelector(`input[name="${name}"]:checked`);
   return r ? r.value : "";
