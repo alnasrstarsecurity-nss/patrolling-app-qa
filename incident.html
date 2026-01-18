@@ -190,47 +190,13 @@ if (sessionStorage.getItem("LOGGED_IN") !== "YES") {
  <div class="section">
   <h3>Attachments</h3>
 
-  <div class="upload-card">
-    <div class="upload-left">
-      📸 Upload Images (10 max)
-    </div>
-    <label class="upload-btn">
-      Select Images
-      <input type="file" id="attach1" name="attach1" multiple accept="image/*">
-    </label>
-  </div>
+      <label>Attachment 1</label><input type="file" input id="attach1" name="attach1" accept="image/*">
       <small id="attach1Error" style="color:red;"></small>
-      <div id="thumbPreview" class="thumb-container"></div>
-   <div class="upload-card">
-    <div class="upload-left">
-      📄 Upload File 1
+      <label>Attachment 2</label><input type="file" input id="attach2" name="attach2" accept="image/*,application/pdf">
+    <label>Attachment 3</label><input type="file" input id="attach3" name="attach3" accept="image/*,application/pdf">
+    <label>Attachment 4</label><input type="file" input id="attach4" name="attach4" accept="image/*,application/pdf">
     </div>
-    <label class="upload-btn">
-      Select File
-      <input type="file" id="attach2" name="attach2" accept="image/*,application/pdf">
-    </label>
-  </div>
 
-  <div class="upload-card">
-    <div class="upload-left">
-      📄 Upload File 2
-    </div>
-    <label class="upload-btn">
-      Select File
-      <input type="file" id="attach3" name="attach3" accept="image/*,application/pdf">
-    </label>
-  </div>
-
-  <div class="upload-card">
-    <div class="upload-left">
-      📄 Upload File 3
-    </div>
-    <label class="upload-btn">
-      Select File
-      <input type="file" id="attach4" name="attach4" accept="image/*,application/pdf">
-    </label>
-  </div>
-</div>
 
   
     <label>Prepared and Reported by</label>
@@ -265,7 +231,7 @@ function goBack() {
 <script src="js/incident.js"></script>
 </body>
 </html>
-   
+   📸Upload Images (10 max)
  
     
   
