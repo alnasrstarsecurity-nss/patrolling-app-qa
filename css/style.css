@@ -332,3 +332,59 @@ canvas {
   font-size: 14px;
   font-weight: 400;
 }
+
+.upload-block {
+  margin: 18px 0;
+}
+
+.upload-label {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #374151;
+}
+
+.upload-drop {
+  background: #ffffff;
+  border: 2px dashed #cbd5e1;
+  border-radius: 14px;
+  padding: 18px;
+  text-align: center;
+  color: #596277;
+  cursor: pointer;
+  transition: 0.2s;
+  font-size: 14px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+}
+
+.upload-drop:hover {
+  border-color: #8b2d2d;
+  background: #faf5f5;
+}
+
+.upload-preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.upload-preview img,
+.upload-preview .file-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+  object-fit: cover;
+  background: #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+}
+
+.upload-info {
+  margin-top: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #8b2d2d;
+}
+
