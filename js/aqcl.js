@@ -6,6 +6,23 @@ const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyOr7YqQ3zouq0dBH_RC
 const form = document.getElementById("aqclForm");
 const status = document.getElementById("status");
 
+/* ===============================
+   MAX_IMAGES  10
+================================ */
+const MAX_IMAGES = 10;
+const attach1Input = document.getElementById("attach1");
+const attach1Error = document.getElementById("attach1Error");
+
+attach1Input.addEventListener("change", function () {
+  if (this.files.length > MAX_IMAGES) {
+    attach1Error.textContent = `⚠️ Maximum ${MAX_IMAGES} images allowed`;
+    this.value = ""; // clear selection
+  } else {
+    attach1Error.textContent = "";
+  }
+});
+
+
 
 /* ===============================
    user full name
@@ -45,21 +62,6 @@ function blurActiveInputSafely() {
   }
 }
 
-/* ===============================
-   MAX_IMAGES  10
-================================ */
-const MAX_IMAGES = 10;
-const attach1Input = document.getElementById("attach1");
-const attach1Error = document.getElementById("attach1Error");
-
-attach1Input.addEventListener("change", function () {
-  if (this.files.length > MAX_IMAGES) {
-    attach1Error.textContent = `⚠️ Maximum ${MAX_IMAGES} images allowed`;
-    this.value = ""; // clear selection
-  } else {
-    attach1Error.textContent = "";
-  }
-});
 
 /* ===============================
    attachment HELPER
