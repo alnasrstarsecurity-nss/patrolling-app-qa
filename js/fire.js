@@ -4,6 +4,51 @@ const form = document.getElementById("fireForm");
 const status = document.getElementById("status");
 const submitBtn = form.querySelector('button[type="submit"]');
 
+/* ===============================
+   ATTACHMENT CONFIG
+================================ */
+const MAX_IMAGES = 10;
+const attach1Input = document.getElementById("attach1");
+const attach1Error = document.getElementById("attach1Error");
+
+/* Limit image selection */
+attach1Input.addEventListener("change", function () {
+  if (this.files.length > MAX_IMAGES) {
+    attach1Error.textContent = `⚠️ Maximum ${MAX_IMAGES} images allowed`;
+    this.value = "";
+  } else {
+    attach1Error.textContent = "";
+  }
+});
+
+/* Single file → base64 */
+function fileToBase64(fileInput) {
+  const file = fileInput.files[0];
+  return new Promise(resolve => {
+    if (!file) return resolve("");
+    const reader = new FileReader();
+    reader.onload = e => resolve(e.target.result);
+    reader.readAsDataURL(file);
+  });
+}
+
+/* Multiple images → base64 array */
+async function filesToBase64(fileInput, maxFiles = 10) {
+  const files = Array.from(fileInput.files || []).slice(0, maxFiles);
+  const results = [];
+
+  for (const file of files) {
+    const base64 = await new Promise(resolve => {
+      const reader = new FileReader();
+      reader.onload = e => resolve(e.target.result);
+      reader.readAsDataURL(file);
+    });
+    results.push(base64);
+  }
+  return results;
+}
+
+
 //specify damage
 const damageRadios = document.querySelectorAll('input[name="Damage"]');
 const specifyDamage = document.getElementById("SpecifyDamage");
@@ -50,7 +95,7 @@ function getCheckedValues(name) {
     .join(", ");
 }
 
-form.addEventListener("submit", e => {
+form.addEventListener("submit", async e => {
   e.preventDefault();
 
     submitBtn.disabled = true;
@@ -101,6 +146,11 @@ form.addEventListener("submit", e => {
 
     "Action Taken": Actiontaken.value,
     "Other Information": "",
+
+    "Attachment 1": await filesToBase64(form.attach1, 10),
+    "Attachment 2": await fileToBase64(form.attach2),
+    "Attachment 3": await fileToBase64(form.attach3),
+    "Attachment 4": await fileToBase64(form.attach4)
 
     "Guard Name": GuardName.value,
     "Guard Staff No": StaffNo.value,
