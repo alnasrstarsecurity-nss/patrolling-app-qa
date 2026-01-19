@@ -67,7 +67,7 @@ function blurActiveInputSafely() {
 
 /* ===============================
    attachment HELPER
-================================ */
+================================ 
 function fileToBase64(fileInput) {
   const file = fileInput.files[0];
   return new Promise(resolve => {
@@ -80,7 +80,7 @@ function fileToBase64(fileInput) {
 }
 /* ===============================
   10 image attachment HELPER
-================================ */
+================================ 
 async function filesToBase64(fileInput, maxFiles = 10) {
   const files = Array.from(fileInput.files || []).slice(0, maxFiles);
 
@@ -266,10 +266,10 @@ form.addEventListener("submit", e => {
     guard1CAG: guard1CAG,
     guard2CAG: guard2CAG,
 
-  attach1: await filesToBase64(form.attach1, 10),
+/*  attach1: await filesToBase64(form.attach1, 10),
   attach2: await fileToBase64(form.attach2),
   attach3: await fileToBase64(form.attach3),
-  attach4: await fileToBase64(form.attach4),
+  attach4: await fileToBase64(form.attach4),*/
 
     patrollingSupervisor: patrollingSupervisor.value,
     serialNumber: serialNumber.value,
