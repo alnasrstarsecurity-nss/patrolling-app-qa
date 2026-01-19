@@ -10,7 +10,7 @@ const status = document.getElementById("status");
 
 /* ===============================
    MAX_IMAGES  10
-================================ */
+================================ 
 const MAX_IMAGES = 10;
 const attach1Input = document.getElementById("attach1");
 const attach1Error = document.getElementById("attach1Error");
@@ -22,7 +22,7 @@ attach1Input.addEventListener("change", function () {
   } else {
     attach1Error.textContent = "";
   }
-});
+});*/
 
 
 
