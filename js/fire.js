@@ -75,20 +75,20 @@ damageRadios.forEach(radio => {
 ================================ */
 
 const causeSelect = document.getElementById("Cause");
-const otherIncident = document.getElementById("OtherIncident");
+const otherCause = document.getElementById("OtherCause");
 
 // Ensure hidden on load
-otherIncident.style.display = "none";
-otherIncident.required = false;
+otherCause.style.display = "none";
+otherCause.required = false;
 
 causeSelect.addEventListener("change", () => {
   if (causeSelect.value === "Others") {
-    otherIncident.style.display = "block";
-    otherIncident.required = true;
+    otherCause.style.display = "block";
+    otherCause.required = true;
   } else {
-    otherIncident.style.display = "none";
-    otherIncident.required = false;
-    otherIncident.value = ""; // clear when not needed
+    otherCause.style.display = "none";
+    otherCause.required = false;
+    otherCause.value = ""; // clear when not needed
   }
 });
 
@@ -168,7 +168,7 @@ form.addEventListener("submit", async e => {
 
     "Description of the Incident": DescriptionIncident.value,
     "Cause of the Incident": Cause.value,
-     "Other Incident":OtherIncident.value,
+     "Other Cause":OtherCause.value,
 
     "Property Damage": radio("Damage"),
     "Property Damage Specify": SpecifyDamage.value,
