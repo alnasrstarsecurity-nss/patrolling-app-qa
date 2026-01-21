@@ -95,6 +95,27 @@ async function filesToBase64(fileInput, maxFiles = 10) {
 }
 
 /* ===============================
+  limit the input number
+================================ */
+document.addEventListener("input", function (e) {
+  const el = e.target;
+
+  if (el.tagName === "INPUT" && el.type === "number" && el.dataset.maxdigits) {
+    const max = parseInt(el.dataset.maxdigits, 10);
+
+    // Remove non-digits
+    let value = el.value.replace(/\D/g, "");
+
+    // Enforce digit limit
+    if (value.length > max) {
+      value = value.slice(0, max);
+    }
+
+    el.value = value;
+  }
+});
+
+/* ===============================
    date format
 ================================ */
 function toDDMMYYYY(dateValue) {
