@@ -100,20 +100,23 @@ async function filesToBase64(fileInput, maxFiles = 10) {
 document.addEventListener("input", function (e) {
   const el = e.target;
 
+  /* 🔹 NUMBER inputs → digit limit */
   if (el.tagName === "INPUT" && el.type === "number" && el.dataset.maxdigits) {
-    const max = parseInt(el.dataset.maxdigits, 10);
-
-    // Remove non-digits
     let value = el.value.replace(/\D/g, "");
+    el.value = value.slice(0, el.dataset.maxdigits);
+  }
 
-    // Enforce digit limit
-    if (value.length > max) {
-      value = value.slice(0, max);
+  /* 🔹 TEXT inputs + TEXTAREA → character limit */
+  if (
+    (el.tagName === "INPUT" && el.type === "text") ||
+    el.tagName === "TEXTAREA"
+  ) {
+    if (el.dataset.maxchars) {
+      el.value = el.value.slice(0, el.dataset.maxchars);
     }
-
-    el.value = value;
   }
 });
+
 
 /* ===============================
    date format
