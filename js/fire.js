@@ -231,6 +231,8 @@ form.addEventListener("submit", async e => {
         submitBtn.disabled = false;
         specifyDamage.style.display = "none";
         specifyDamage.required = false;
+        otherCause.style.display = "none";
+        otherCause.required = false;
         setTimeout(() => status.innerText = "", 3000);
       } else {
         status.innerText = "❌ Submission Failed";
