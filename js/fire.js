@@ -92,7 +92,27 @@ document.addEventListener("input", function (e) {
     }
   }
 });
+/* ===============================
+  alarm acctivated Other area hidden/show
+================================ */
 
+const otherAreaCheckbox = document.querySelector(
+  'input[name="AlarmActivated"][value="Other Area"]'
+);
+const otherAreaWrapper = document.getElementById("otherAreaWrapper");
+const areaInput = document.getElementById("Area");
+
+otherAreaCheckbox.addEventListener("change", () => {
+  if (otherAreaCheckbox.checked) {
+    otherAreaWrapper.style.display = "block";
+    areaInput.required = true;
+    areaInput.focus();
+  } else {
+    otherAreaWrapper.style.display = "none";
+    areaInput.required = false;
+    areaInput.value = "";
+  }
+});
 /* ===============================
    Cause → Others mandatory logic
 ================================ */
