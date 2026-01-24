@@ -229,6 +229,8 @@ form.addEventListener("submit", async e => {
         status.style.color = "green";
         form.reset();
         submitBtn.disabled = false;
+        specifyDamage.style.display = "none";
+        specifyDamage.required = false;
         setTimeout(() => status.innerText = "", 3000);
       } else {
         status.innerText = "❌ Submission Failed";
