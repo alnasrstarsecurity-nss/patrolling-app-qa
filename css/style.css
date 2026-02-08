@@ -150,15 +150,9 @@ button.secondary {
     width: 120px;            /* adjust size */
 }
 
-/* Headings 
+
 .section {
-  margin: 20px 0;
-  padding: 15px;
-  border-left: 4px solid #1e88e5;
-  background: #f9fbff;
-}*/
-.section {
-  background: #f0f9fc;
+  background: #fff2f9;
   padding: 20px;
   border-radius: 16px;
   /*box-shadow: 6px 10px 24px rgba(0, 0, 0, 0.12);*/
