@@ -1,4 +1,4 @@
-const FIRE_SCRIPT_URL ="https://script.google.com/macros/s/AKfycbxeHJXd2SYdv1flfd2hD-dhyLD7q7z7xVQWB5KKx5UFGwx2GgG4HEkwkDSlyFgeAdGCEA/exec";
+const FIRE_SCRIPT_URL ="https://script.google.com/macros/s/AKfycbxp18VzqsBsnqBJc9Dzrf8sp5vJQKQlxV4bZetRQJhAqUG8r1mGllWvssVcs6e7igxXSA/exec";
 
 const form = document.getElementById("fireForm");
 const status = document.getElementById("status");
