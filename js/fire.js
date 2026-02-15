@@ -168,6 +168,7 @@ form.addEventListener("submit", async e => {
     alarmError.style.display = "block";
     alarmChecks[0].focus();
     submitBtn.disabled = false;
+    status.innerText = "";
     return;
   } else {
     alarmError.style.display = "none";
