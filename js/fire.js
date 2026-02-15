@@ -176,7 +176,7 @@ form.addEventListener("submit", async e => {
   status.innerText = "Submitting...";
   status.style.color = "blue";
 
-  // ✅ Alarm Activated validation (at least one required)
+  /*/ ✅ Alarm Activated validation (at least one required)
   const checked = Array.from(alarmChecks).some(cb => cb.checked);
   if (!checked) {
     alarmError.style.display = "block";
@@ -185,7 +185,7 @@ form.addEventListener("submit", async e => {
     return;
   } else {
     alarmError.style.display = "none";
-  }
+  }*/
 
   // ---- Prepare attachments ----
   const attach1 = await filesToBase64(form.attach1, 10);
