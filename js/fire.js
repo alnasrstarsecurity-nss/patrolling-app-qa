@@ -186,7 +186,7 @@ form.addEventListener("submit", async e => {
     buildingName: BuildingName.value,
     typeOfIncident: radio("TypeofInciden"),
     evacuated: radio("guardPosition"),
-    dateOfIncident: toDDMMYYYY(Incidentdate.value),
+    dateOfIncident: Incidentdate.value,
     incidentTime: Incidenttime.value,
     panelResetTime: paneltime.value,
 
