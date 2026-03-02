@@ -125,7 +125,7 @@ otherCause.style.display = "none";
 otherCause.required = false;
 
 causeSelect.addEventListener("change", () => {
-  if (causeSelect.value === "Others") {
+  if (causeSelect.value === "OTHERS") {
     otherCause.style.display = "block";
     otherCause.required = true;
   } else {
